@@ -1,22 +1,27 @@
 package edu.grinnell.csc207.genericslab;
 
 import java.util.Arrays;
+import java.lang.reflect.Array;
 
 /**
  * An array-based implementation of a list.
+ *
+ * @param <T>
  */
-public class ArrayList {
+public class ArrayList<T> {
 
     private static final int INITIAL_SIZE = 8;
-    private int[] data;
+    private T[] data;
     private int sz;
 
     /**
      * Constructs a new, empty array list.
+     *
+     * @param classT
      */
-    public ArrayList() {
-        this.data = new int[INITIAL_SIZE];
-        this.sz = 0;
+    @SuppressWarnings("unchecked")
+    public ArrayList(Class<T> classT) {
+        this.data = (T[]) Array.newInstance(classT, 10);
     }
 
     private void ensureCapacity() {
@@ -27,10 +32,10 @@ public class ArrayList {
 
     /**
      * Adds <code>value</code> to the end of the list
-     * 
+     *
      * @param value the value to add to the end of the list
      */
-    public void add(int value) {
+    public void add(T value) {
         ensureCapacity();
         data[sz++] = value;
     }
@@ -46,7 +51,7 @@ public class ArrayList {
      * @param index the index of the element to retrieve
      * @return the value at the specified <code>index</code>
      */
-    public int get(int index) {
+    public T get(int index) {
         if (index < 0 || index >= sz) {
             throw new IndexOutOfBoundsException(index);
         }
@@ -55,15 +60,15 @@ public class ArrayList {
 
     /**
      * Removes the value at <code>index</code> from the list
-     * 
+     *
      * @param index the index of the element to remove
      * @return the element at <code>index</code>
      */
-    public int remove(int index) {
+    public T remove(int index) {
         if (index < 0 || index >= sz) {
             throw new IndexOutOfBoundsException(index);
         } else {
-            int ret = data[index];
+            T ret = data[index];
             for (int i = index; i < data.length - 1; i++) {
                 data[i] = data[i + 1];
             }
@@ -71,4 +76,36 @@ public class ArrayList {
             return ret;
         }
     }
+
+    /**
+     * Inserts sep in between each element of this list.
+     *
+     * @param sep
+     */
+    public void intersperse(T sep) {
+        ;
+    }
+
+    /**
+     * Returns the maximum element found in the list.
+     *
+     * @return
+     */
+    public T maximum() {
+        ;
+    }
+
+    /**
+     * returns a string representation of the list in the form: [x1, x2, ...,
+     * xk]. where x1, x2, ..., xk are the elements of the list.
+     *
+     * @return
+     */
+    public String toString() {
+
+    }
+
+    void insertionSort()
+
+: sorts this list using the insertion sort algorithm. Insertion sort proceeds by looping over the elements of the array, maintaining the following invariant:
 }

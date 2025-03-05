@@ -5,20 +5,24 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
-public class ArrayListTests {
+/**
+ *
+ * @author Tiffany Tang
+ */
+public class LinkedListTests {
 
     @Test
-    public void emptyArrayListTest() {
-        ArrayList<Integer> lI = new ArrayList(Integer.class);
-        ArrayList<String> lS = new ArrayList(String.class);
+    public void emptyListTest() {
+        LinkedList<Integer> lI = new LinkedList();
+        LinkedList<String> lS = new LinkedList();
         assertEquals(0, lI.size());
         assertEquals(0, lS.size());
     }
 
     @Test
-    public void ArraylistAddSize10Nums() {
-        ArrayList<Integer> lI = new ArrayList(Integer.class);
-        ArrayList<String> lS = new ArrayList(String.class);
+    public void listAddSize10Nums() {
+        LinkedList<String> lS = new LinkedList();
+        LinkedList<Integer> lI = new LinkedList();
         for (int i = 0; i < 10; i++) {
             lS.add(Integer.toString(i));
             lI.add(i);
@@ -28,9 +32,9 @@ public class ArrayListTests {
     }
 
     @Test
-    public void ArraylistGetSeveral() {
-        ArrayList<Integer> lI = new ArrayList(Integer.class);
-        ArrayList<String> lS = new ArrayList(String.class);
+    public void listGetSeveral() {
+        LinkedList<String> lS = new LinkedList();
+        LinkedList<Integer> lI = new LinkedList();
         String[] elements = new String[]{"a", "b", "c", "d", "e", "f", "g"};
         int[] integers = new int[]{1, 2, 3, 4, 5, 6, 7};
         for (int i = 0; i < elements.length; i++) {
@@ -45,16 +49,16 @@ public class ArrayListTests {
     }
 
     @Test
-    public void ArraylistGetEmpty() {
-        ArrayList<String> l = new ArrayList(String.class);
+    public void listGetEmpty() {
+        LinkedList<String> l = new LinkedList();
         l.add("");
         assertEquals("", l.get(0));
     }
 
     @Test
-    public void ArraylistGetOOB() {
-        ArrayList<Integer> lI = new ArrayList(Integer.class);
-        ArrayList<String> lS = new ArrayList(String.class);
+    public void listGetOOB() {
+        LinkedList<String> lS = new LinkedList();
+        LinkedList<Integer> lI = new LinkedList();
         lS.add("hello!");
         lS.add("goodbye!");
         lS.add("huh?");
@@ -78,9 +82,9 @@ public class ArrayListTests {
     }
 
     @Test
-    public void ArraylistRemoveSome() {
-        ArrayList<Integer> lI = new ArrayList(Integer.class);
-        ArrayList<String> lS = new ArrayList(String.class);
+    public void listRemoveSome() {
+        LinkedList<String> lS = new LinkedList();
+        LinkedList<Integer> lI = new LinkedList();
 
         lS.add("!");
         lS.add("@");
@@ -115,9 +119,9 @@ public class ArrayListTests {
     }
 
     @Test
-    public void ArraylistRemoveOOB() {
-        ArrayList<Integer> lI = new ArrayList(Integer.class);
-        ArrayList<String> lS = new ArrayList(String.class);
+    public void listRemoveOOB() {
+        LinkedList<String> lS = new LinkedList();
+        LinkedList<Integer> lI = new LinkedList();
         lS.add("A");
         lS.add("B");
         lS.add("C");
