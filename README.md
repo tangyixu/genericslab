@@ -1,9 +1,6 @@
 # Generics Lab
 
-Authors: (_TODO: fill in names here!_)
-
+Authors: Tiffany Tang
 ## Resources
 
-*   (_TODO: fill in resources here!_)
-*   ...
-*   ...
+*  https://osera.cs.grinnell.edu/ttap/data-structures-labs/exploring-generics.html
